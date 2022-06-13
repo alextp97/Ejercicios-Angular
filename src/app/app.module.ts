@@ -7,6 +7,7 @@ import { DisplayHideComponent } from './components/display-hide/display-hide.com
 import { ComponentCommunicationComponent } from './components/component-communication/component-communication.component';
 import { CrudComponent } from './components/crud/crud.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { ChildComponentComponent } from './components/component-communication/child-component/child-component.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
     DisplayHideComponent,
     ComponentCommunicationComponent,
     CrudComponent,
-    NavbarComponent
+    NavbarComponent,
+    ChildComponentComponent
   ],
   imports: [
     BrowserModule,

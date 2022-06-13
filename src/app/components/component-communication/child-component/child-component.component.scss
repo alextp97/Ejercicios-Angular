@@ -1,12 +1,4 @@
-h1 {
-    margin-top: 110px;
-    text-align: center;
-}
 
-.parent {
-    border: 3px solid #5AABC4;
-    padding: 10px;
-}
 
 .message {
     display: block;
@@ -14,12 +6,18 @@ h1 {
     margin-bottom: 20px;
 }
 
-.btn-parent {
+.child {
+    border: 3px solid #5AABC4;
+    margin: 8px;
+    padding: 10px;
+}
+
+.btn-child {
     display: flex;
     justify-content: center;
 }
 
-.btn-parent > button {
+.btn-child > button {
     margin-right: 16px;
     padding: 10px;
     border: none;
