@@ -1,1 +1,10 @@
 <p>display-hide works!</p>
+
+<button (click)="showHide()">
+    {{ showText }}
+</button>
+
+<div *ngIf="show">
+    Hola mundo
+
+</div>
