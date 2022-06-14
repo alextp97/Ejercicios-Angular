@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommunicationService } from '../../services/communication.service';
 
 @Component({
   selector: 'app-child-component',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChildComponentComponent implements OnInit {
 
-  constructor() { }
+  messageScreen = '';
+
+  constructor( private _communicationService: CommunicationService ) { }
 
   ngOnInit(): void {
+
+    //Me suscribo al parentMsg Emit
+    this._communicationService.parentMsg.subscribe( (msg) => {
+      this.messageScreen = msg;
+    })
+  }
+
+
+  sendMsgService() {
+    this._communicationService.childMsg.emit('child using service');
+    
   }
 
 }

@@ -3,11 +3,11 @@
         
     <h3>Child</h3>
 
-    <span class="message">Hola soy el mensaje :D</span>
+    <span class="message">{{ messageScreen | uppercase }}</span>
 
     <div class="btn-child">
-        <button>Use Service</button>
-        <button>Use Input Property</button>
+        <button (click)="sendMsgService()">Use Service</button>
+        <button>Use Output Property</button>
         <button>Use Observable</button>
     </div>
    

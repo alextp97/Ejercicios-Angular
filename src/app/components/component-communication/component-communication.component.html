@@ -6,10 +6,10 @@
 
     <h3>Parent</h3>
 
-    <span class="message">Hola soy el mensaje :D</span>
+    <span class="message">{{ messageOnScreen | uppercase }}</span>
 
     <div class="btn-parent">
-        <button class="button" type="button">Use Service</button>
+        <button class="button" type="button" (click)="sendMsgService()">Use Service</button>
         <button class="button" type="button">Use Input Property</button>
         <button class="button" type="button">Use Observable</button>
     </div>
