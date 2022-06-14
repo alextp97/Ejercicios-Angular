@@ -3,12 +3,12 @@
         
     <h3>Child</h3>
 
-    <span class="message">{{ messageScreen | uppercase }}</span>
+    <span class="message">message: {{ (messagechild ? messagechild: messageScreen) | uppercase }}</span>
 
     <div class="btn-child">
         <button (click)="sendMsgService()">Use Service</button>
-        <button>Use Output Property</button>
-        <button>Use Observable</button>
+        <button (click)="sendMsgOutput()">Use Output Property</button>
+        <button (click)="sendMsgObservable()">Use Observable</button>
     </div>
    
 
