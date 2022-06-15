@@ -10,8 +10,8 @@ import { CommunicationService } from '../services/communication.service';
 
 export class ComponentCommunicationComponent implements OnInit {
 
-  message = '';
-  messageOnScreen = '';
+  message = ''; //Mensaje que se envía al componente hijo
+  messageOnScreen = ''; //Mensaje que se muestra en pantalla
 
   constructor( private _communicationService: CommunicationService ) { }
 
@@ -22,6 +22,7 @@ export class ComponentCommunicationComponent implements OnInit {
       this.messageOnScreen = msg;
     });
 
+    //Me suscribo al childmsg del observable
     this._communicationService.getChildMsg().subscribe((msg) => {
       this.messageOnScreen = msg;
     });
@@ -47,6 +48,7 @@ export class ComponentCommunicationComponent implements OnInit {
     this.message = 'parent using input property';
   }
 
+  //Enviar mensaje al hijo usando observable
   sendMsgObservable() {
     this.message = 'parent using Observable';
   }

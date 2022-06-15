@@ -5,6 +5,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './display-hide.component.html',
   styleUrls: ['./display-hide.component.scss']
 })
+
+
 export class DisplayHideComponent implements OnInit {
   
   show: boolean = false; //La variable show la inicializo en false para que no muestre nada al principio

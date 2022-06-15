@@ -21,7 +21,7 @@ export class ChildComponentComponent implements OnInit {
   ngOnInit(): void {
 
     //Me suscribo al parentMsg Emit
-    this._communicationService.parentMsg.subscribe( (msg) => {
+    this._communicationService.parentMsg.subscribe((msg) => {
       this.messageScreen = msg;
     });
 

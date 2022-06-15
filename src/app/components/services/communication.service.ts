@@ -8,8 +8,8 @@ import { Subject } from 'rxjs';
 export class CommunicationService {
 
   //EventEmitters
-  parentMsg : EventEmitter<string> = new EventEmitter();
-  childMsg : EventEmitter<string> = new EventEmitter();
+  parentMsg = new EventEmitter<string>();
+  childMsg = new EventEmitter<string>();
 
 
   //Observables para el padre e hijo
