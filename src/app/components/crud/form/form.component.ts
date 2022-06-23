@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 
 
@@ -10,7 +10,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class FormComponent implements OnInit {
 
+
   hide = true;
+
+  myForm: FormGroup = new FormGroup({
+    'username': new FormControl('RTX 4080ti')
+  })
 
   constructor( private fb: FormBuilder) { }
 

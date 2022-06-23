@@ -6,5 +6,12 @@ h1 {
 .formContainer {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+
+    &__form {
+        width: 300px;
+    }
+    &__table {
+        width: 600px;
+
+    }
 }

@@ -1,14 +1,17 @@
 <!--Contenedor del Formulario-->
 
 
-    <form class="form">
+    <form class="form" [formGroup]="myForm" autocomplete="off">
 
         <h1>Formulario de Registro</h1>
         <p>
             <mat-hint>Nombre de Usuario</mat-hint> <br>
             <mat-form-field appearance="fill">
                 <mat-label>Nombre de Usuario</mat-label>
-                <input matInput placeholder="User name" required>
+                <input matInput 
+                       placeholder="User name"
+                       formControlName="username" 
+                       >
             </mat-form-field>
         </p>
 
