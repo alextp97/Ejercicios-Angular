@@ -8,6 +8,10 @@ import { ComponentCommunicationComponent } from './components/component-communic
 import { CrudComponent } from './components/crud/crud.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { ChildComponentComponent } from './components/component-communication/child-component/child-component.component';
+import { CrudModule } from './components/crud/crud.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 @NgModule({
   declarations: [
@@ -16,11 +20,13 @@ import { ChildComponentComponent } from './components/component-communication/ch
     ComponentCommunicationComponent,
     CrudComponent,
     NavbarComponent,
-    ChildComponentComponent
+    ChildComponentComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CrudModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

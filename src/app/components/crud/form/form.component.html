@@ -1,0 +1,78 @@
+<!--Contenedor del Formulario-->
+
+
+    <form class="form">
+
+        <h1>Formulario de Registro</h1>
+        <p>
+            <mat-hint>Nombre de Usuario</mat-hint> <br>
+            <mat-form-field appearance="fill">
+                <mat-label>Nombre de Usuario</mat-label>
+                <input matInput placeholder="User name" required>
+            </mat-form-field>
+        </p>
+
+        <p>
+            <mat-hint>Contraseña</mat-hint> <br>
+            <mat-form-field appearance="fill">
+                <mat-label>Contraseña</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" required>
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+        </p>
+
+        <p>
+            <mat-hint>Repita la contraseña</mat-hint> <br>
+            <mat-form-field appearance="fill">
+                <mat-label>Repita la contraseña</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" required>
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+        </p>
+
+        <p>
+            <mat-hint>Email</mat-hint> <br>
+            <mat-form-field appearance="fill">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="pat@example.com" required>
+                <!--<mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>-->
+            </mat-form-field>
+        </p>
+
+        <p>
+            <mat-checkbox>Enviarme ofertas promocionales</mat-checkbox>
+        </p>
+
+        <p>
+            <mat-hint>País</mat-hint> <br>
+            <mat-form-field appearance="fill">
+                <mat-label>País</mat-label>
+                    <mat-select required>
+                        <mat-option>-- Pais --</mat-option>
+                        <mat-option value="option">Option</mat-option>
+                    </mat-select>
+            </mat-form-field>
+        </p>
+
+        <p>
+            <mat-hint>Ciudad</mat-hint> <br>
+            <mat-form-field appearance="fill">
+                <mat-label>Ciudad</mat-label>
+                    <mat-select required>
+                        <mat-option>-- Ciudad --</mat-option>
+                        <mat-option value="option">Option</mat-option>
+                    </mat-select>
+            </mat-form-field>
+        </p>
+
+        <p>
+            <button mat-raised-button color="primary">Crear</button>
+        </p>
+        
+    </form>
+
+
