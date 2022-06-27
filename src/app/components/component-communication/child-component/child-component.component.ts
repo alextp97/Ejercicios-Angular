@@ -1,6 +1,6 @@
 
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { CommunicationService } from '../../services/communication.service';
+import { CommunicationService } from '../services/communication.service';
 
 @Component({
   selector: 'app-child-component',
@@ -28,11 +28,8 @@ export class ChildComponentComponent implements OnInit {
     this._communicationService.getParentMsg().subscribe((msg) => {
       this.messageScreen = msg;
     })
-
     
   }
-
-
   //Metodos para enviar mensajes al padre mediante un servicio, Output y Observable
   sendMsgService() {
     this._communicationService.childMsg.emit('child using service');

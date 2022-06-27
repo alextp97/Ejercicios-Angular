@@ -2,12 +2,15 @@
 <h1>Ejercicio Display - Hide</h1>
 <hr>
 
-<div class="btnHide">
-    <button (click)="showHide()" class="btnText">
-        {{ showText }}
-    </button>
+<div class="container">
+    <div class="btnHide">
+        <button (click)="showHide()" class="btnText">
+            {{ showText }}
+        </button>
+    </div>
+    
+    <div *ngIf="show" class="showText">
+        <p>¡Hola mundo!</p>
+    </div>
 </div>
 
-<div *ngIf="show" class="showText">
-    <p>¡Hola mundo!</p>
-</div>

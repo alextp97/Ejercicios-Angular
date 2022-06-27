@@ -4,9 +4,19 @@ h1 {
     text-align: center;
 }
 
+hr {
+    width: 1150px;
+}
+
+.container {
+    width: 1150px;
+    margin: 0 auto;
+}
+
 .btnText {
     padding: 8px 16px;
-    background-color: #59ADF7;
+    background-color: #97A1DA;
+    color: white;
     font-size: 16px;
     border: none;
     border-radius: 5px;
@@ -19,13 +29,14 @@ h1 {
 .showText {
     width: 400px;
     height: 100px;
-    background-color: #33C8F5;
+    background-color: #7885D0;
     border-radius: 6px;
-    border: 3px solid #0562F7;
+    border: 3px solid #3B4CAA;
 }
 
 .showText > p {
 
+    margin-top: 40px;
     font-size: 32px;
     text-align: center;
 }

@@ -19,7 +19,9 @@
             <mat-hint>Contraseña</mat-hint> <br>
             <mat-form-field appearance="fill">
                 <mat-label>Contraseña</mat-label>
-                <input matInput [type]="hide ? 'password' : 'text'" required>
+                <input matInput
+                       formControlName="password" 
+                       [type]="hide ? 'password' : 'text'" required>
                 <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                 <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </button>
@@ -41,7 +43,9 @@
             <mat-hint>Email</mat-hint> <br>
             <mat-form-field appearance="fill">
                 <mat-label>Email</mat-label>
-                <input matInput placeholder="pat@example.com" required>
+                <input matInput placeholder="pat@example.com"
+                                formControlName="email"
+                                required>
                 <!--<mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>-->
             </mat-form-field>
         </p>
@@ -77,5 +81,20 @@
         </p>
         
     </form>
+
+    <span>Valid</span>
+    <pre>{{ myForm.valid }}</pre>
+
+    <span>Pristine</span>
+    <pre>{{ myForm.pristine }}</pre>
+
+    <span>Touched</span>
+    <pre>{{ myForm.touched }}</pre>
+
+    <span>Value</span>
+    <pre>{{ myForm.value | json }}</pre>
+    
+    
+
 
 

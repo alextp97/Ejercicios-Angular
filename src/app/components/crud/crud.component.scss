@@ -3,9 +3,15 @@ h1 {
     text-align: center;
 }
 
+hr {
+    width: 1150px;
+}
+
+
 .formContainer {
     display: flex;
     flex-direction: row;
+    justify-content: center;
 
     &__form {
         width: 300px;

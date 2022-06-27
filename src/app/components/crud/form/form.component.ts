@@ -14,7 +14,11 @@ export class FormComponent implements OnInit {
   hide = true;
 
   myForm: FormGroup = new FormGroup({
-    'username': new FormControl('RTX 4080ti')
+    'username': new FormControl('Don Staka'),
+    'password': new FormControl('12345'),
+    'email': new FormControl('staka@gmail.com'),
+    'country': new FormControl('Spain'),
+    'city': new FormControl('Jaen')
   })
 
   constructor( private fb: FormBuilder) { }
