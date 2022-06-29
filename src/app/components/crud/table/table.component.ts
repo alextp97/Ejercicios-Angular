@@ -18,6 +18,7 @@ export class TableComponent implements OnInit {
 
     this.crudService.getUsers()
       .subscribe( users => this.listUsers = users );
+      
   }
 
 }
