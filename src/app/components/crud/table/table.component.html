@@ -8,15 +8,21 @@
         <th>Acciones</th>
     </tr>
 
-    <tr class="tableBody">
+    <tr class="tableBody" *ngFor="let user of listUsers">
 
-        <td>Soleado</td>
-        <td>Mayormente soleado</td>
-        <td>Parcialmente nublado</td>
-        <td>Ariana</td>
-        <td>Rihanna</td>
-        <td>Borrar, editar</td>
+        <td>{{user.username}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.offers}}</td>
+        <td>{{user.coutry}}</td>
+        <td>{{user.city}}</td>
+        <td> <a>
+                <mat-icon aria-hidden="false" aria-label="Edit">edit</mat-icon>
+            </a>
+            <a>
+                <mat-icon aria-hidden="false" aria-label="Delete">delete</mat-icon>
+            </a>
+            
+        </td>
     
       </tr>
 </table>
-
