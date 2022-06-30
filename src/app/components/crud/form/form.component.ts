@@ -13,6 +13,7 @@ import { ValidatorsService } from '../services/validators.service';
 })
 export class FormComponent implements OnInit {
 
+  //Implemento la interfaz de User para los campos del formulario
   user!: User;
 
   coutry: string[] = ["España", "Francia", "Portugal", "México", "Alemania", "Italia", "Japón"];
@@ -35,8 +36,7 @@ export class FormComponent implements OnInit {
   })
 
 
-
-  
+  //Constructor del crud
   constructor( private fb: FormBuilder, 
                private validatorService: ValidatorsService,
                private crudService: CrudService,
@@ -45,6 +45,7 @@ export class FormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
   //Compruebo si los campos han sido tocados o tienen errores para mostrar los datos
   fieldNoValid( field: string ){
     return this.myForm.controls[field].errors
@@ -52,15 +53,20 @@ export class FormComponent implements OnInit {
   }
 
 
-  create(){
+  //Este método crea nuevo usuario 
+  createUser(){
 
     if( this.myForm.invalid){
       this.myForm.markAllAsTouched()
       return;
     }
 
-    console.log(this.myForm.value);
-    this.myForm.reset();
+    this.crudService.newUser( this.myForm.value)
+      .subscribe( resp => {
+        console.log('Respuesta', resp)
+      })
+    //console.log(this.myForm.value);
+    this.myForm.reset('');
   }
 
   

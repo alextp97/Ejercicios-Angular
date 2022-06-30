@@ -14,4 +14,10 @@ export class CrudService {
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>('http://localhost:3000/users')
   }
+
+
+  //Enviar el usuario creado a la base de datos
+  newUser( user: User): Observable<User>{
+    return this.http.post<User>('http://localhost:3000/users', user);
+  }
 }
