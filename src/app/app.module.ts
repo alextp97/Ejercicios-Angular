@@ -31,7 +31,6 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     NavbarComponent
   ],
   imports: [
-    AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
     CrudModule,
@@ -39,7 +38,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatListModule,
     MatMenuModule,
     MatSidenavModule,
-    MatToolbarModule
+    MatToolbarModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

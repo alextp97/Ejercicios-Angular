@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { User } from '../interfaces/user.interface';
 import { CrudService } from '../services/crud.service';
+import { SharedService } from '../services/shared.service';
 import { ValidatorsService } from '../services/validators.service';
 
 
@@ -40,6 +41,7 @@ export class FormComponent implements OnInit {
   constructor( private fb: FormBuilder, 
                private validatorService: ValidatorsService,
                private crudService: CrudService,
+               private sharedService: SharedService
                 ) { }
 
   ngOnInit(): void {
@@ -61,10 +63,11 @@ export class FormComponent implements OnInit {
       return;
     }
 
+
+    //Cojo el valor del formulario y lo envio como el nuevo usuario con el método newUser
     this.crudService.newUser( this.myForm.value)
-      .subscribe( resp => {
-        console.log('Respuesta', resp)
-      })
+      .subscribe(() => this.sharedService.sendUser())
+      
     //console.log(this.myForm.value);
     this.myForm.reset('');
   }

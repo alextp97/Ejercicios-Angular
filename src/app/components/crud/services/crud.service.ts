@@ -8,16 +8,23 @@ import { Observable } from 'rxjs';
 })
 export class CrudService {
 
+  private url = 'http://localhost:3000';
+
   constructor( private http: HttpClient ) { }
 
   //Obtengo todos los usuarios
   getUsers(): Observable<User[]> {
-    return this.http.get<User[]>('http://localhost:3000/users')
+    return this.http.get<User[]>(`${this.url}/users`);
   }
 
 
   //Enviar el usuario creado a la base de datos
   newUser( user: User): Observable<User>{
-    return this.http.post<User>('http://localhost:3000/users', user);
+    return this.http.post<User>(`${this.url}/users/`, user);
+  }
+
+  //Metodo para eliminar el usuario
+  deleteUser(id: number): Observable<any>{
+    return this.http.delete(`${this.url}/users/${id}`);
   }
 }

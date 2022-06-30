@@ -35,35 +35,6 @@
       "offers": true,
       "coutry": "Japan",
       "city": "Kioto"
-    },
-    {
-      "id": 5,
-      "username": "Rubén",
-      "password": "1234",
-      "email": "ruben@gmail.com",
-      "offers": false,
-      "coutry": "Spain",
-      "city": "Madrid"
-    },
-    {
-      "username": "hola",
-      "password": "1234",
-      "password2": "1234",
-      "email": "jsoj@gmail.com",
-      "offers": true,
-      "coutry": "Italia",
-      "city": "roma",
-      "id": 8
-    },
-    {
-      "username": "Raúl",
-      "password": "123456789",
-      "password2": "123456789",
-      "email": "raul@hola.com",
-      "offers": false,
-      "coutry": "Portugal",
-      "city": "Chichinabo",
-      "id": 9
     }
   ]
 }
