@@ -35,6 +35,16 @@
       "offers": true,
       "coutry": "Japan",
       "city": "Kioto"
+    },
+    {
+      "id": 5,
+      "username": "Gabriel",
+      "password": "1234",
+      "password2": "1234",
+      "email": "gabriel@gmail.com",
+      "offers": true,
+      "coutry": "Portugal",
+      "city": "Marmolejo"
     }
   ]
 }

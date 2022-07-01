@@ -16,7 +16,7 @@
         <td>{{user.coutry}}</td>
         <td>{{user.city}}</td>
         <td> <a>
-                <mat-icon aria-hidden="false" aria-label="Edit">edit</mat-icon>
+                <mat-icon (click)="modifyUser(user.id)" aria-hidden="false" aria-label="Edit">edit</mat-icon>
             </a>
             <a>
                 <mat-icon (click)="eliminateUser(user)" aria-hidden="false" aria-label="Delete">delete</mat-icon>

@@ -27,4 +27,14 @@ export class CrudService {
   deleteUser(id: number): Observable<any>{
     return this.http.delete(`${this.url}/users/${id}`);
   }
+
+  //Metodo que devuelve el usuario por id
+  getPersonById(id: number): Observable<User>{
+    return this.http.get<User>(`${this.url}/users/${id}`);
+  }
+
+  //Metodo que inserta el usuario modificado
+  modifyUser(user: User): Observable<User>{
+    return this.http.put<User>(`${this.url}/users/${user.id}`, user);
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Subscription, Observable } from 'rxjs';
 import { User } from '../interfaces/user.interface';
 import { CrudService } from '../services/crud.service';
@@ -10,6 +10,9 @@ import { SharedService } from '../services/shared.service';
   styleUrls: ['./table.component.scss']
 })
 export class TableComponent implements OnInit {
+
+
+  @Output() modUser = new EventEmitter<User>();
 
 
   clickEvent: Subscription;
@@ -30,6 +33,18 @@ export class TableComponent implements OnInit {
       
   }
 
+
+  //Método para modificar el usuario
+  modifyUser(id: number){
+    console.log(this.crudService.getPersonById(id)
+    .subscribe((data) => {
+      this.modUser.emit(data)
+    }));
+     
+
+  }
+
+  //Método para eliminar el usuario
   eliminateUser(user: User){
 
     //console.log(user.id);

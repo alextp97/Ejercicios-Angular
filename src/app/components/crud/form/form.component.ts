@@ -1,3 +1,4 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { User } from '../interfaces/user.interface';
@@ -24,6 +25,7 @@ export class FormComponent implements OnInit {
   hide = true;
 
   myForm: FormGroup = this.fb.group({
+    id: [""],
     username: [ '', [Validators.required, Validators.minLength(3)] ],
     password: [ '', [Validators.required, Validators.minLength(4)]],
     password2: [ '', [Validators.required] ],
@@ -63,14 +65,28 @@ export class FormComponent implements OnInit {
       return;
     }
 
+    if(this.myForm.get('id')?.value === ""){
 
-    //Cojo el valor del formulario y lo envio como el nuevo usuario con el método newUser
-    this.crudService.newUser( this.myForm.value)
+      //Cojo el valor del formulario y lo envio como el nuevo usuario con el método newUser
+      this.crudService.newUser( this.myForm.value)
       .subscribe(() => this.sharedService.sendUser())
-      
-    //console.log(this.myForm.value);
-    this.myForm.reset('');
+    
+      //console.log(this.myForm.value);
+      this.myForm.reset('');
+
+    }else{
+
+      this.crudService.modifyUser(this.myForm.value)
+      .subscribe(() => this.sharedService.sendUser())
+
+      this.myForm.reset('');
+
+    }
+
+
+    
   }
+
 
   
 
